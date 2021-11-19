@@ -1,29 +1,10 @@
 extends layout
 
 block content
-  div.container
-    div.card
-      div.card-header
-        div.backdrop
-        div.card-title El Pollo Loco
-        img.card-header-image(src='https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=600,height=400,format=jpeg,quality=50/https://doordash-static.s3.amazonaws.com/media/store/header/d35fc69d-12ce-4d2b-9423-0353971c3e76.01')
-      div.card-body
-        div.edit
-          a(href='#') Edit
-        div.card-details
-          div.category Mexican
-          div.rating
-            span &#X2b50
-            span &#X2b50
-            span &#X2b50
-            span &#X2b50
-            span &#X2b50
-        div.description
-          |haosjfoianmekofh
-          |aijowjnefoij
-          |aifowenmfoi
-          |ajoike
-          |po,khoprekgm
-          |wfrbjnioermgb
-          |joisemrogk
-          |fbngjoihn
+  include mixins/restaurantCard
+    div.container
+      div.add-button-row
+        a.button.save(href="/add") Add Restaurant
+    div.container
+      each restaurant in restaurants
+        +restaurantCard(restaurant)
